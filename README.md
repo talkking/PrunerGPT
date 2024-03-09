@@ -1,11 +1,11 @@
-# SparseGPT
+# MixGPT
 
-This repository contains code to reproduce the key results of the paper [SparseGPT: Massive Language Models Can be Accurately Pruned in One-shot](https://arxiv.org/abs/2301.00774).
+This repository contains code to reproduce the key results of the paper [One-Shot Sensitivity-Aware Mixed Sparsity Pruning for Large Language Models](https://arxiv.org/abs/2310.09499).
 
 Specifically, it provides scripts and implementations to:
 
-* Evaluate baseline and pruned models on raw-WikiText2, PTB and C4-subset. (`datautils.py`, `opt.py`, `bloom.py`) 
-* Perform unstructured, n:m and sparse + quantized SparseGPT compression on OPT and BLOOM models. (`sparsegpt.py`, `opt.py`, `bloom.py`)
+* Evaluate baseline and pruned models on raw-WikiText2, PTB and C4-subset. (`datautils.py`, `opt.py`, `baichuan.py`) 
+* Perform unstructured, n:m and sparse + quantized MixGPT compression on OPT and BaiChuan models. (`sparsegpt.py`, `opt.py`, `baichuan.py`)
 
 We note that this SparseGPT implementation is based on our open-source [GPTQ code](https://github.com/IST-DASLab/gptq). 
 
@@ -67,10 +67,10 @@ One can try SparseGPT via the colab demo - `demo.ipynb`.
 If you found this work useful, please consider citing:
 
 ```
-@article{frantar-sparsegpt,
-  title={{SparseGPT}: Massive Language Models Can Be Accurately Pruned in One-Shot}, 
-  author={Elias Frantar and Dan Alistarh},
-  year={2023},
-  journal={arXiv preprint arXiv:2301.00774}
+@article{shao2023one,
+  title={One-shot sensitivity-aware mixed sparsity pruning for large language models},
+  author={Shao, Hang and Liu, Bei and Qian, Yanmin},
+  journal={arXiv preprint arXiv:2310.09499},
+  year={2023}
 }
 ```
