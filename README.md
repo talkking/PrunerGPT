@@ -30,10 +30,10 @@ python opt.py facebook/opt-125m c4 --sparsity .5 --gmp
 # Prune to 50\% uniform sparsity with SparseGPT
 python opt.py facebook/opt-125m c4 --sparsity .5
 
-# Prune to full 2:4 sparsity with SparseGPT
-python opt.py facebook/opt-125m c4 --prunen 2 --prunem 4
+# Prune to 50\% mixed sparsity with MixGPT
+python opt.py facebook/opt-125m c4 --sparsity .5
 
-# Prune to 50\% + 4-bit with SparseGPT
+# Prune to 50\% + 4-bit with MixGPT
 python opt.py facebook/opt-125m c4 --sparsity .5 --wbits 4
 ```
 
@@ -43,14 +43,14 @@ For the 175B model, access must first be requested from Meta and the checkpoint 
 The BLOOM script `bloom.py` has a very similar interface, however some features are currently only available for OPT, e.g.:
 
 ```
-# Sparsify BLOOM-176B with SparseGPT
+# Sparsify BLOOM-176B with MixGPT
 python bloom.py bigscience/bloom c4 --sparsity .5
 ```
 
 We also provide LLaMA pruning script with the very same interface:
 
 ```
-# Sparsify LLaMa with SparseGPT
+# Sparsify LLaMa with MixGPT
 python llama.py LLAMA_HF_WEIGHTS_LOCATION c4 --sparsity 0.5
 ```
 
@@ -60,17 +60,19 @@ One can optionally log evalution results to W&B with `--log_wandb`.
 
 ## Demo
 
-One can try SparseGPT via the colab demo - `demo.ipynb`. 
+One can try MixGPT via the colab demo - `demo.ipynb`. 
 
 ## Cite
 
 If you found this work useful, please consider citing:
 
 ```
-@article{shao2023one,
+@inproceedings{shao2024one,
   title={One-shot sensitivity-aware mixed sparsity pruning for large language models},
   author={Shao, Hang and Liu, Bei and Qian, Yanmin},
-  journal={arXiv preprint arXiv:2310.09499},
-  year={2023}
+  booktitle={ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={11296--11300},
+  year={2024},
+  organization={IEEE}
 }
 ```
