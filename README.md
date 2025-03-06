@@ -58,10 +58,6 @@ In case one would like to save the sparsified model specify path to saved checkp
 
 One can optionally log evalution results to W&B with `--log_wandb`. 
 
-## Demo
-
-One can try PrunerGPT via the colab demo - `demo.ipynb`. 
-
 ## Cite
 
 If you found this work useful, please consider citing:
