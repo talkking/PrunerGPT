@@ -1,11 +1,11 @@
-# MixGPT
+# PrunerGPT
 
 This repository contains code to reproduce the key results of the paper [One-Shot Sensitivity-Aware Mixed Sparsity Pruning for Large Language Models](https://arxiv.org/abs/2310.09499).
 
 Specifically, it provides scripts and implementations to:
 
 * Evaluate baseline and pruned models on raw-WikiText2, PTB and C4-subset. (`datautils.py`, `opt.py`, `baichuan.py`) 
-* Perform unstructured, n:m and sparse + quantized MixGPT compression on OPT and BaiChuan models. (`sparsegpt.py`, `opt.py`, `baichuan.py`)
+* Perform unstructured, n:m and sparse + quantized PrunerGPT compression on OPT and BaiChuan models. (`sparsegpt.py`, `opt.py`, `baichuan.py`)
 
 We note that this SparseGPT implementation is based on our open-source [GPTQ code](https://github.com/IST-DASLab/gptq). 
 
@@ -30,10 +30,10 @@ python opt.py facebook/opt-125m c4 --sparsity .5 --gmp
 # Prune to 50\% uniform sparsity with SparseGPT
 python opt.py facebook/opt-125m c4 --sparsity .5
 
-# Prune to 50\% mixed sparsity with MixGPT
+# Prune to 50\% mixed sparsity with PrunerGPT
 python opt.py facebook/opt-125m c4 --sparsity .5
 
-# Prune to 50\% + 4-bit with MixGPT
+# Prune to 50\% + 4-bit with PrunerGPT
 python opt.py facebook/opt-125m c4 --sparsity .5 --wbits 4
 ```
 
@@ -43,14 +43,14 @@ For the 175B model, access must first be requested from Meta and the checkpoint 
 The BLOOM script `bloom.py` has a very similar interface, however some features are currently only available for OPT, e.g.:
 
 ```
-# Sparsify BLOOM-176B with MixGPT
+# Sparsify BLOOM-176B with PrunerGPT
 python bloom.py bigscience/bloom c4 --sparsity .5
 ```
 
 We also provide LLaMA pruning script with the very same interface:
 
 ```
-# Sparsify LLaMa with MixGPT
+# Sparsify LLaMa with PrunerGPT
 python llama.py LLAMA_HF_WEIGHTS_LOCATION c4 --sparsity 0.5
 ```
 
@@ -60,7 +60,7 @@ One can optionally log evalution results to W&B with `--log_wandb`.
 
 ## Demo
 
-One can try MixGPT via the colab demo - `demo.ipynb`. 
+One can try PrunerGPT via the colab demo - `demo.ipynb`. 
 
 ## Cite
 
